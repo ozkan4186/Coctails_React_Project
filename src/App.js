@@ -1,18 +1,32 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import pages
-import Home from './pages/Home'
-import About from './pages/About'
-import SingleCocktail from './pages/SingleCocktail'
-import Error from './pages/Error'
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SingleCocktail from "./pages/SingleCocktail";
+import Error from "./pages/Error";
 // import components
-import Navbar from './components/Navbar'
+import Navbar from "./components/Navbar";
+import AppRouter from "./router/AppRouter";
+import { createTheme } from "@mui/material/styles";
+import { purple } from "@mui/material/colors";
 function App() {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: purple[500],
+      },
+      secondary: {
+        main: "#f44336",
+      },
+    },
+  });
+
   return (
     <div>
-      <h2>app component</h2>
+      <AppRouter />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
