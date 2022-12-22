@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Grid } from "@mui/material";
+import theme from "@mui/material";
 
 const Search = () => {
   return (
@@ -19,15 +20,16 @@ const Search = () => {
         sx={{
           width: 500,
           maxWidth: "100%",
+         
         }}
       >
         <TextField
           fullWidth
           label="Search Cocktail"
           id="Search Cocktail"
-         
+          color="secondary"
           sx={{
-            borderColor: "secondary",
+            fontSize: "2rem",
           }}
         />
       </Box>

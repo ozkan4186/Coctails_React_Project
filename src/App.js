@@ -8,7 +8,7 @@ import Error from "./pages/Error";
 // import components
 import Navbar from "./components/Navbar";
 import AppRouter from "./router/AppRouter";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { purple } from "@mui/material/colors";
 function App() {
   const theme = createTheme({
@@ -17,15 +17,15 @@ function App() {
         main: purple[500],
       },
       secondary: {
-        main: "#f44336",
+        main: "#00c853",
       },
     },
   });
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <AppRouter />
-    </div>
+    </ThemeProvider>
   );
 }
 
