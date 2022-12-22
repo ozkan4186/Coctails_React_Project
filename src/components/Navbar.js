@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import logo from "../img/tarik.svg";
 import { Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 // import theme from "@mui/material/theme";
 
 const pages = ["Home", "About"];
@@ -40,6 +41,7 @@ const Navbar = () => {
   return (
     <AppBar
       position="static"
+      // color="secondary"
       sx={{
         color: "secondary",
         background: "lightgreen",
@@ -48,7 +50,6 @@ const Navbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-
           <Typography
             variant="h6"
             noWrap
@@ -60,14 +61,13 @@ const Navbar = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "error",
+              color: "inherit",
               textDecoration: "none",
               background: "lightgreen",
             }}
           >
             <img src={logo} alt="" />
           </Typography>
-
           <Box
             sx={{
               flexGrow: 0,
@@ -81,7 +81,7 @@ const Navbar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="error"
+              color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -129,30 +129,34 @@ const Navbar = () => {
           >
             <img src={logo} alt="" />
           </Typography>
-
-          <Grid
-            container
-            direction="row-reverse"
-            justifyContent="flex-start"
-            alignItems="flex-end"
-          >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 3,
-                  color: "white",
-                  display: "inline-block",
-                  mx: 3,
-
-                  // justifyContent: "space-between",
-                }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Grid>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Grid
+              container
+              direction="row-reverse"
+              justifyContent="flex-start"
+              alignItems="flex-end"
+            >
+              {pages.map((page) => (
+                <Link
+                  to={page=="Home" ? "/" : page    }
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  style={{
+                    my: 3,
+                    color: "black",
+                    display: "block",
+                    fontSize:"2rem",
+                    border:"2 px solid black",
+                    margin:"0 2rem",
+                    fontWeight:"bold"
+                  }}
+                >
+                  {page}
+                </Link>
+              ))}
+            </Grid>
+          </Box>
+         
         </Toolbar>
       </Container>
     </AppBar>
