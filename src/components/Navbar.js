@@ -17,7 +17,7 @@ import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 // import theme from "@mui/material/theme";
 
-const pages = ["Home", "About"];
+const pages = ["About","Home" ];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
