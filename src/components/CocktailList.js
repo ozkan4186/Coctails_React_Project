@@ -9,12 +9,13 @@ import Typography from "@mui/material/Typography";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function MediaControlCard() {
   const theme = useTheme();
   const item = useLocation();
   console.log(item);
+  const navigate=useNavigate()
 
   return (
     <>
@@ -138,9 +139,11 @@ export default function MediaControlCard() {
           justifyContent: "center",
         }}
       >
-        <button>
+        <button
+        onClick={()=>navigate("/")}>
           <svg  width="32" height="32" viewBox="0 0 24 24" sx={{
             backgroundColor:"lightgreen",
+            cursor: "pointer",
           }} >
             <path
               fill="#888888"
