@@ -17,7 +17,7 @@ function App() {
         main: purple[500],
       },
       secondary: {
-        main: "#00c853",
+        main: "#81F249",
       },
     },
   });

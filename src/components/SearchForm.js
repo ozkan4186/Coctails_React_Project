@@ -9,12 +9,12 @@ import Cocktail from "./Cocktail";
 const Search = () => {
   const [search, setSearch] = useState("");
   const [coctail, setCoctail] = useState([]);
-  console.log(search);
+  // console.log(search);
   const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`;
 
   const getApi = async () => {
     const { data } = await axios(url);
-    console.log(data);
+    // console.log(data);
     setCoctail(data.drinks);
   };
 

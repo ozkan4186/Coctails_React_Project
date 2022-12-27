@@ -10,10 +10,8 @@ import CocktailList from "./CocktailList";
 
 const Cocktail = ({ coctail }) => {
   console.log(coctail);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
-  
-  
   return (
     <Grid
       sx={{
@@ -25,10 +23,9 @@ const Cocktail = ({ coctail }) => {
         borderRadius: "22px",
       }}
     >
-      {coctail &&
-        coctail.map((item) => {
+      {coctail?.map((item,id) => {
           return (
-            <Grid>
+            <Grid key={id}>
               <Card
                 sx={{
                   width: 300,
@@ -38,6 +35,7 @@ const Cocktail = ({ coctail }) => {
                   justifyContent: "space-between",
                   alignItems: "center",
                   boxShadow: "rgba(0, 0, 0, 0.18) 0px 2px 4px",
+                  cursor: "pointer",
                 }}
               >
                 <CardActionArea>
@@ -64,11 +62,15 @@ const Cocktail = ({ coctail }) => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <button class="cta" style={{
-                    border:"none"
-                  }} 
-                  onClick={()=>navigate("/detail",item={item})}     >
-                    <span class="hover-underline-animation"> Details</span>
+                  <button
+                    className="cta"
+                    style={{
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => navigate("/detail/", {state:item})}
+                  >
+                    <span className="hover-underline-animation">Details</span>
                     <svg
                       viewBox="0 0 46 16"
                       height="10"
@@ -86,44 +88,11 @@ const Cocktail = ({ coctail }) => {
                   </button>
                 </CardActions>
               </Card>
-              {/* <CocktailList item={item}  /> */}
             </Grid>
           );
         })}
     </Grid>
   );
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  };
+};
 
 export default Cocktail;
