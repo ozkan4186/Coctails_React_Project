@@ -29,7 +29,7 @@ const Cocktail = ({ coctail }) => {
               <Card
                 sx={{
                   width: 300,
-                  height: 365,
+                  height: 410,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -67,6 +67,7 @@ const Cocktail = ({ coctail }) => {
                     style={{
                       border: "none",
                       cursor: "pointer",
+                      marginTop:"2rem"
                     }}
                     onClick={() => navigate("/detail/", {state:item})}
                   >

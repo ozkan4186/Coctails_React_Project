@@ -464,22 +464,24 @@ Cocktail
 button {
  display: flex;
  height: 3em;
- width: 100px;
+ width: 200px;
  align-items: center;
  justify-content: center;
- background-color: #eeeeee4b;
+ background-color: #da16164b;
  border-radius: 3px;
  letter-spacing: 1px;
  transition: all 0.2s linear;
  cursor: pointer;
  border: none;
  background: #fff;
+ font-size: 1.3rem;
+
 }
 
 button > svg {
  margin-right: 5px;
  margin-left: 5px;
- font-size: 20px;
+ font-size: 1rem;
  transition: all 0.4s ease-in;
 }
 
