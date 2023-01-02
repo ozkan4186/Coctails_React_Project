@@ -73,6 +73,7 @@ const Navbar = () => {
               flexGrow: 0,
               display: { xs: "flex", md: "none" },
               color: "error",
+              border: "none",
             }}
           >
             <IconButton
@@ -82,8 +83,15 @@ const Navbar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{
+                border: "none",
+              }}
             >
-              <MenuIcon />
+              <MenuIcon
+                sx={{
+                  border: "none",
+                }}
+              />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -138,17 +146,17 @@ const Navbar = () => {
             >
               {pages.map((page) => (
                 <Link
-                  to={page=="Home" ? "/" : page    }
+                  to={page == "Home" ? "/" : page}
                   key={page}
                   onClick={handleCloseNavMenu}
                   style={{
                     my: 3,
                     color: "black",
                     display: "block",
-                    fontSize:"2rem",
-                    border:"2 px solid black",
-                    margin:"0 2rem",
-                    fontWeight:"bold"
+                    fontSize: "2rem",
+                    border: "2 px solid black",
+                    margin: "0 2rem",
+                    fontWeight: "bold",
                   }}
                 >
                   {page}
@@ -156,7 +164,6 @@ const Navbar = () => {
               ))}
             </Grid>
           </Box>
-         
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,12 +1,12 @@
 import React from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
-import CocktailList from "./CocktailList";
+import {  CardActionArea, CardActions, Grid } from "@mui/material";
+
 
 const Cocktail = ({ coctail }) => {
   console.log(coctail);
